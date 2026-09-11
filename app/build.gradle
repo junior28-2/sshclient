@@ -4,29 +4,30 @@ plugins {
 
 android {
     namespace 'com.example.sshclient'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.sshclient"
-        minSdk 24
-        targetSdk 34
+        minSdk 26
+        targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0-PRO"
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'com.github.mwiede:jsch:2.28.6'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Moteurs réseau d'audit externes compilés à distance
+    implementation 'com.github.mwiede:jsch:0.2.16'
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 }

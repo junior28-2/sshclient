@@ -1,56 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://android.com"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editHost"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Adresse du serveur (ex: 192.168.1.10)" />
-
-    <EditText
-        android:id="@+id/editPort"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Port (22 par défaut)"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/editUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nom d'utilisateur" />
-
-    <EditText
-        android:id="@+id/editPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/btnConnect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Se connecter" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textOutput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Suite Professionnelle d'Audit Réseau"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/holo_blue_dark"/>
+
+        <EditText
+            android:id="@+id/etTargetIp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP ou URL Cible (ex: 192.168.1.1)"
+            android:inputType="textUri" />
+
+        <EditText
+            android:id="@+id/etWordlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dictionnaire de mots de passe / PINs WPS"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:id="@+id/btnLoadDefaultWordlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Charger le dictionnaire d'usine"
+            android:backgroundTint="@android:color/darker_gray"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnBruteForce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Lancer Brute Force SSH"
+            android:backgroundTint="@android:color/holo_red_dark"/>
+
+        <Button
+            android:id="@+id/btnInternetAudit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Audit En-têtes Internet (cURL / WAF)"
+            android:backgroundTint="@android:color/holo_orange_dark"/>
+
+        <Button
+            android:id="@+id/btnWifiWps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Audit Vulnérabilité Wi-Fi (WPS/BSSID)"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnExportReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exporter le rapport d'audit (.txt)"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Console de sortie d'audit :"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvConsoleLog"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#1E1E1E"
+            android:textColor="#00FF00"
+            android:padding="10dp"
+            android:text="[+] Système d'audit prêt. Chargez un dictionnaire pour commencer."
             android:fontFamily="monospace"
-            android:textIsSelectable="true" />
-
-    </ScrollView>
-
-</LinearLayout>
+            android:scrollbars="vertical"/>
+    </LinearLayout>
+</ScrollView>
