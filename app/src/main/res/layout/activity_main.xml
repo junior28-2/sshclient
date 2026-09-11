@@ -16,7 +16,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"
-            android:textColor="@android:color/holo_blue_dark"/>
+            android:textColor="#009688"/>
 
         <EditText
             android:id="@+id/etTargetIp"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Charger le dictionnaire d'usine"
-            android:backgroundTint="@android:color/darker_gray"
+            android:backgroundTint="#757575"
             android:layout_marginBottom="10dp"/>
 
         <Button
@@ -47,21 +47,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1. Lancer Brute Force SSH"
-            android:backgroundTint="@android:color/holo_red_dark"/>
+            android:backgroundTint="#D32F2F"/>
 
         <Button
             android:id="@+id/btnInternetAudit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2. Audit En-têtes Internet (cURL / WAF)"
-            android:backgroundTint="@android:color/holo_orange_dark"/>
+            android:backgroundTint="#F57C00"/>
 
         <Button
             android:id="@+id/btnWifiWps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3. Audit Vulnérabilité Wi-Fi (WPS/BSSID)"
-            android:backgroundTint="@android:color/holo_green_dark"
+            android:backgroundTint="#388E3C"
             android:layout_marginBottom="10dp"/>
 
         <Button
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Exporter le rapport d'audit (.txt)"
-            android:backgroundTint="@android:color/holo_blue_light"
+            android:backgroundTint="#1976D2"
             android:layout_marginBottom="16dp"/>
 
         <TextView
